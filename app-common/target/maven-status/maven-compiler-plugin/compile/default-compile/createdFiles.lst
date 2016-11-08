@@ -1,0 +1,7 @@
+com/ortech/app/model/Customer.class
+com/ortech/app/model/HomeType.class
+com/ortech/app/model/InsuranceType.class
+com/ortech/app/model/Address.class
+com/ortech/app/model/Customer_.class
+com/ortech/app/model/Insurance.class
+com/ortech/app/model/BaseEntity.class
