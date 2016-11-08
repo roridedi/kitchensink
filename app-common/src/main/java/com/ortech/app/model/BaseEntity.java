@@ -122,6 +122,10 @@ public class BaseEntity implements Serializable {
 		}
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
 	/**
 	 * Get the version.
 	 * 
