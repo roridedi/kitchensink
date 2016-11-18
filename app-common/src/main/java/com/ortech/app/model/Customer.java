@@ -1,6 +1,12 @@
 package com.ortech.app.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Customer extends BaseEntity {
@@ -11,43 +17,62 @@ public class Customer extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
+
 	private Address address;
-	private Insurance insurance;
-	private Integer numberOfAccudents;
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@JoinColumn(name = "customerId")
+	private List<Accident> accident;
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@JoinColumn(name = "customerId")
+	private List<Car> car;
 	private boolean isMarried;
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public Address getAddress() {
 		return address;
 	}
+
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	public Insurance getInsurance() {
-		return insurance;
+
+	public List<Accident> getAccident() {
+		return accident;
 	}
-	public void setInsurance(Insurance insurance) {
-		this.insurance = insurance;
+
+	public void setAccident(List<Accident> accident) {
+		this.accident = accident;
 	}
-	public Integer getNumberOfAccudents() {
-		return numberOfAccudents;
+
+	public boolean isMarried() {
+		return isMarried;
 	}
-	public void setNumberOfAccudents(Integer numberOfAccudents) {
-		this.numberOfAccudents = numberOfAccudents;
+
+	public void setMarried(boolean isMarried) {
+		this.isMarried = isMarried;
 	}
-	@Override
-	public String toString() {
-		return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", insurance="
-				+ insurance + ", numberOfAccudents=" + numberOfAccudents + ", isMarried=" + isMarried + "]";
+
+	public List<Car> getCar() {
+		return car;
 	}
+
+	public void setCar(List<Car> car) {
+		this.car = car;
+	}
+
 }

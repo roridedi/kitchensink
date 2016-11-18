@@ -1,8 +1,15 @@
 com/ortech/app/model/Customer.class
+com/ortech/app/model/AccidentType.class
+com/ortech/app/model/Accident.class
+com/ortech/app/model/Insurance_.class
+com/ortech/app/model/Address.class
+com/ortech/app/model/Address_.class
+com/ortech/app/model/BaseEntity_.class
+com/ortech/app/model/Car.class
 com/ortech/app/model/HomeType.class
 com/ortech/app/model/InsuranceType.class
-com/ortech/app/model/Address.class
 com/ortech/app/model/Customer_.class
-com/ortech/app/model/BaseEntity_.class
 com/ortech/app/model/Insurance.class
+com/ortech/app/model/Accident_.class
 com/ortech/app/model/BaseEntity.class
+com/ortech/app/model/Car_.class

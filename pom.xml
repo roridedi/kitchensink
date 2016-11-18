@@ -83,6 +83,8 @@
 		<!-- maven-compiler-plugin -->
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		<version.infinispan>9.0.0.Alpha4</version.infinispan>
+
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -105,9 +107,23 @@
 				<version>2.6</version>
 				<scope>compile</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-bom</artifactId>
+				<version>${version.infinispan}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<dependencies>
+		<dependencies>
+	
+	<dependency>
+		<groupId>javax.transaction</groupId>
+		<artifactId>transaction-api</artifactId>
+		<version>1.1</version>
+	</dependency>
+
 		<!-- Import the CDI API, we use provided scope as the API is included in 
 			JBoss EAP -->
 		<dependency>

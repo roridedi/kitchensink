@@ -1,5 +1,8 @@
 package com.ortech.app.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Insurance extends BaseEntity {
 
 	/**
