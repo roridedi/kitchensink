@@ -2,89 +2,40 @@ package com.ortech.app.dao.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import org.apache.log4j.Logger;
 
-import com.ortech.app.dao.BaseDao;
 import com.ortech.app.model.Insurance;
 
-public class InsuranceDao implements BaseDao<Insurance> {
+public class InsuranceDao extends GenericDaoImpl<Insurance> {
 
-	@Override
-	public void setEntityManager(EntityManager newEntityManager) {
-		// TODO Auto-generated method stub
-		
+	@Inject
+	private Logger logger;
+
+	public Insurance findById(Long id) {
+		if (id == null) {
+			throw new IllegalArgumentException("Insurance ID can not be null");
+		}
+		Insurance insurance = null;
+		EntityManager em = this.getEntityManager();
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Insurance> insuranceQ = cb.createQuery(Insurance.class);
+		Root<Insurance> iRoot = insuranceQ.from(Insurance.class);
+
+		insuranceQ.select(iRoot);
+		insuranceQ.where(cb.equal(iRoot.get("id"), id));
+		Insurance insruance = em.createQuery(insuranceQ).getSingleResult();
+
+		return insruance;
 	}
 
 	@Override
-	public EntityManager getEntityManager() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public Insurance save(Insurance insurance) throws Exception {
 
-	@Override
-	public Insurance get(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.save(insurance);
 	}
-
-	@Override
-	public List<Insurance> get(Integer... ids) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Insurance> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Insurance save(Insurance object) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Insurance> save(Insurance... objects) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Integer... ids) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Insurance object) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Insurance... objects) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteAll() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<Insurance> findByExample(Insurance object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

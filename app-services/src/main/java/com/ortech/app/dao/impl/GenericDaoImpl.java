@@ -19,7 +19,7 @@ import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
 
-import com.ortech.app.dao.BaseDao;
+import com.ortech.app.dao.GenericDao;
 import com.ortech.app.model.BaseEntity;
 
 /**
@@ -29,7 +29,7 @@ import com.ortech.app.model.BaseEntity;
  *            Entity type for DOA, Must extend CharaEntity
  */
 @Stateless
-public class GenericDaoImpl<T extends BaseEntity> implements BaseDao<T> {
+public class GenericDaoImpl<T extends BaseEntity> implements GenericDao<T> {
 
 	/**
 	 * Logger.
@@ -77,7 +77,7 @@ public class GenericDaoImpl<T extends BaseEntity> implements BaseDao<T> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public T get(final Integer id) {
+	public T get(final Long id) {
 		final T entity = this.entityManager.find(this.entityClass, id);
 		if (entity == null) {
 			throw new NoResultException(
@@ -91,13 +91,13 @@ public class GenericDaoImpl<T extends BaseEntity> implements BaseDao<T> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<T> get(final Integer... ids) {
+	public List<T> get(final Long... ids) {
 		if (ids == null || ids.length == 0) {
 			throw new IllegalArgumentException("ID List must not be null and have atleast one element");
 		}
 
 		final List<T> entityList = new ArrayList<T>(ids.length);
-		for (final Integer id : ids) {
+		for (final Long id : ids) {
 			final T entity = this.get(id);
 			entityList.add(entity);
 		}
@@ -189,7 +189,7 @@ public class GenericDaoImpl<T extends BaseEntity> implements BaseDao<T> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void delete(final Integer id) {
+	public void delete(final Long id) {
 		final T entity = this.get(id);
 		this.delete(entity);
 	}
@@ -198,12 +198,12 @@ public class GenericDaoImpl<T extends BaseEntity> implements BaseDao<T> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void delete(final Integer... ids) {
+	public void delete(final Long... ids) {
 		if (ids == null || ids.length == 0) {
 			throw new IllegalArgumentException("Object List must not be null and have atleast one element");
 		}
 
-		for (final Integer id : ids) {
+		for (final Long id : ids) {
 			this.delete(id);
 		}
 	}

@@ -12,7 +12,7 @@ import com.ortech.app.model.BaseEntity;
  * @param <T>
  *            Entity type for DOA, Must extend CharaEntity
  */
-public interface BaseDao<T extends BaseEntity> {
+public interface GenericDao<T extends BaseEntity> {
 
 	/**
 	 * Set entity manager.
@@ -38,7 +38,7 @@ public interface BaseDao<T extends BaseEntity> {
 	 *            object's primary key
 	 * @return object
 	 */
-	T get(Integer id);
+	T get(Long id);
 
 	/**
 	 * Retrieve an persisted objects using the given ids as primary keys.
@@ -50,7 +50,7 @@ public interface BaseDao<T extends BaseEntity> {
 	 *            objects's ids
 	 * @return list of objects
 	 */
-	List<T> get(Integer... ids);
+	List<T> get(Long... ids);
 
 	/**
 	 * Retrieve all persisted objects.
@@ -86,7 +86,7 @@ public interface BaseDao<T extends BaseEntity> {
 	 * @param id
 	 *            object's pk
 	 */
-	void delete(Integer id);
+	void delete(Long id);
 
 	/**
 	 * Remove objects by given ids. IllegalArgumentException thrown when the ID
@@ -95,7 +95,7 @@ public interface BaseDao<T extends BaseEntity> {
 	 * @param ids
 	 *            objects's pk
 	 */
-	void delete(Integer... ids);
+	void delete(Long... ids);
 
 	/**
 	 * Remove an object.

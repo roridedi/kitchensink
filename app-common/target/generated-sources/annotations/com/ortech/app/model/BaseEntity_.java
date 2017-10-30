@@ -10,7 +10,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class BaseEntity_ {
 
 	public static volatile SingularAttribute<BaseEntity, Date> created;
-	public static volatile SingularAttribute<BaseEntity, Integer> id;
+	public static volatile SingularAttribute<BaseEntity, Long> id;
 	public static volatile SingularAttribute<BaseEntity, Integer> version;
 	public static volatile SingularAttribute<BaseEntity, Date> updated;
 

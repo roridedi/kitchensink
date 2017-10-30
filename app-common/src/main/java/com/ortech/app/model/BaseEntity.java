@@ -29,7 +29,7 @@ public class BaseEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable = false)
-	private Integer id;
+	private Long id;
 
 	/**
 	 * Version.
@@ -122,7 +122,7 @@ public class BaseEntity implements Serializable {
 		}
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -141,7 +141,7 @@ public class BaseEntity implements Serializable {
 	 * @param pId
 	 *            the id to set
 	 */
-	public void setId(final Integer pId) {
+	public void setId(final Long pId) {
 		this.id = pId;
 	}
 
