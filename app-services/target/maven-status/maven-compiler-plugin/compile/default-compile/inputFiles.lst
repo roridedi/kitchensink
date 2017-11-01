@@ -1,4 +1,6 @@
-/Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/dao/impl/InsuranceDao.java
+/Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/service/GenericService.java
 /Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/service/InsuranceService.java
-/Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/dao/impl/GenericDaoImpl.java
+/Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/dao/impl/InsuranceDaoImpl.java
+/Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/dao/InsuranceDao.java
+/Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/service/AbstractGenericService.java
 /Users/rahman/kitchen/kitchensink/app-services/src/main/java/com/ortech/app/dao/GenericDao.java

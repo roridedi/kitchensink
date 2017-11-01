@@ -1,5 +1,6 @@
-com/ortech/app/dao/GenericDao.class
-com/ortech/app/dao/impl/InsuranceDao.class
-com/ortech/app/dao/impl/GenericDaoImpl.class
+com/ortech/app/dao/impl/InsuranceDaoImpl.class
+com/ortech/app/service/AbstractGenericService.class
 com/ortech/app/service/InsuranceService.class
-com/ortech/app/dao/impl/GenericDaoImpl$1.class
+com/ortech/app/service/GenericService.class
+com/ortech/app/dao/InsuranceDao.class
+com/ortech/app/dao/GenericDao.class
