@@ -1,16 +1,12 @@
 package com.ortech.app.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 
-@Entity
 public class Car extends BaseEntity {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@JoinColumn(name = "carId")
 	private Insurance insurance;
 	private String color;
 

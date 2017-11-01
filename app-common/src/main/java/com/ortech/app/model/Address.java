@@ -1,8 +1,6 @@
 package com.ortech.app.model;
 
-import javax.persistence.Entity;
 
-@Entity
 public class Address extends BaseEntity {
 
 	/**

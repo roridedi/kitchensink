@@ -2,13 +2,6 @@ package com.ortech.app.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-
-@Entity
 public class Customer extends BaseEntity {
 
 	/**
@@ -19,11 +12,9 @@ public class Customer extends BaseEntity {
 	private String lastName;
 
 	private Address address;
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "customerId")
+
 	private List<Accident> accident;
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "customerId")
+
 	private List<Car> car;
 	private boolean isMarried;
 
