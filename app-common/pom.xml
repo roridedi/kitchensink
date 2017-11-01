@@ -9,4 +9,4 @@
 	<artifactId>app-common</artifactId>
 	<description>Common Utilities</description>
 	<packaging>jar</packaging>
-</project>
+	</project>
